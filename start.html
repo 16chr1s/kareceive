@@ -1,11 +1,23 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<body>
-<script>
-window.addEventListener("message", function(e) {
-    document.body.innerHTML = "Received message: " + e.data;
-});
-</script>
+  <head>
+    <title>Message Receiver</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding-top: 100px;
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Waiting for message...</h1>
 
-</body>
-</html> 
+    <script>
+      window.addEventListener("message", function(event) {
+        document.body.innerHTML = "<h1>Message received:</h1><p>" + event.data + "</p>";
+      });
+    </script>
+  </body>
+</html>
